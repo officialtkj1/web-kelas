@@ -194,6 +194,60 @@ function search() {
   }
 }
 
+/**
+ * Tooltip
+ */
+
+tippy('#instagram', {
+  content: "Instagram Kami",
+  placement: 'bottom',
+  animation: 'perspective',
+  theme: 'translucent'
+});
+
+tippy('#github', {
+  content: "Github",
+  placement: 'bottom',
+  animation: 'perspective',
+  theme: 'translucent'
+});
+
+tippy('#email', {
+  content: "Email",
+  placement: 'top',
+  animation: 'perspective',
+  theme: 'translucent'
+});
+
+tippy('#ngl', {
+  content: "Kirim Pesan NGL Disini",
+  placement: 'top',
+  animation: 'perspective',
+  theme: 'translucent'
+});
+
+/**
+ * FAQ
+ */
+
+// Get all FAQ items
+const faqItems = document.querySelectorAll('.faq-item');
+
+// Add click event listener to each FAQ item
+faqItems.forEach((item) => {
+  const question = item.querySelector('.question');
+  const answer = item.querySelector('.answer');
+
+  question.addEventListener('click', () => {
+    // Toggle the answer visibility
+    answer.classList.toggle('visible');
+  });
+});
+
+
+
+
+
 
 
 
