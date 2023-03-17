@@ -230,21 +230,24 @@ tippy('#ngl', {
  * FAQ
  */
 
-// Get all FAQ items
-const faqItems = document.querySelectorAll('.faq-item');
+function _class(name){
+  return document.getElementsByClassName(name);
+}
 
-// Add click event listener to each FAQ item
-faqItems.forEach((item) => {
-  const question = item.querySelector('.question');
-  const answer = item.querySelector('.answer');
+let tabPanes = _class("tabs")[0].getElementsByTagName("div");
 
-  question.addEventListener('click', () => {
-    // Toggle the answer visibility
-    answer.classList.toggle('visible');
+for(let i=0;i<tabPanes.length;i++){
+  tabPanes[i].addEventListener("click",function(){
+    _class("tabs")[0].getElementsByClassName("active")[0].classList.remove("active");
+    tabPanes[i].classList.add("active");
+    
+    _class("tab-border")[0].style.top = `calc(80px + ${i*50}px)`;
+    
+    _class("tab-content")[0].getElementsByClassName("active")[0].classList.remove("active");
+    _class("tab-content")[0].getElementsByTagName("div")[i].classList.add("active");
+    
   });
-});
-
-
+}
 
 
 

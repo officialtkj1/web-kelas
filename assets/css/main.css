@@ -627,6 +627,10 @@ h3 .section-sub-title{
   padding-top: 30px;
 }
 
+.link-info img{
+  opacity: 0.6;
+}
+
 @media (max-width: 834px){
   .info-contain .link-info p{
     color: var(--color-default);       
@@ -703,61 +707,124 @@ h3 .section-sub-title{
 
 .faq-section h2{
   text-align: center;
-  padding: 40px;
+  padding-top: 100px;
+  opacity: 0.6;
+  color: var(--color-default);
   font-size: 20px;
-  opacity: 0.7;
+  letter-spacing: 3px;
 }
 
-.faq-section{
-  width: 100%;
-}
-
-.faq-container{
+.faq-section .container{
   display: flex;
   justify-content: center;
 }
 
-.faq-item .question {
-  padding: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  color: var(--color-default);
-  margin: 0;
-  display: flex;
-  width: 500px;
+.faq-container {
+	width: 100%;
+	height: 600px;
+	padding: 90px 50px;
+	background: transparent;
+  border: none;
+	color: #d9d9d9;
 }
-
-.faq-item .answer-container{
-  background: rgba(255, 255, 255, 0.5);
-  width: 500;
-}
-
-.faq-item .question-container{
-  background: rgba(31, 31, 31, 0.5);
-  position: relative;
-  width: 100%;
-  height: 40vh;
+.faq-container .tabs {
+	float: left;
+	width: 30%;
+	height: 100%;
+	border-right: 1px solid #343840;
+	padding: 50px 0px;
   overflow-y: scroll;
 }
 
 ::-webkit-scrollbar{
-  background: url(../bg.jpg);
-  width: 1px;
+  width: 5px;
 }
 
-.faq-item .answer {
-  color: var(--color-secondary);
-  margin: 0;
-  padding: 30px;
-  position: relative;
-  width: 100%;
-  height: 40vh;  
+.faq-container .tabs > div {
+	height: 90px;
+	line-height: 20px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #d9d9d9;
+	cursor: pointer;
+	padding-left: 8px;
+  padding-right: 20px;
+}
+.faq-container .tabs > div:hover,
+.faq-container .tabs > div.active {
+	color: var(--color-primary);
+
+}
+.faq-container .tabs div i {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+.faq-container .tab-content {
+	position: relative;
+	height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--color-secondary);
+  overflow-y: scroll;
+}
+
+.faq-container .tab-content p{
+  margin-top: 40px;
+}
+
+.faq-container .tab-content a{
+  font-size: 20px;
+  color: var(--color-default);
+}
+
+.faq-container .tab-content > div {
+	position: absolute;
+	text-align: justify;
+	line-height: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+	top: -200%;
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	-ms-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+}
+.faq-container .tab-content > div.active {
+	top: 0px;
+}
+
+.faq-container .tab-border {
+	position: absolute;
+	width: 4px;
+	height: 50px;
+	background: #343840;
+	left: 198px;
+	top: 100px;
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	-ms-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
 }
 
 @media (max-width: 575px) {
-  .faq-container{
+  .faq-section .container{
     display: block;
-    justify-content: center;
+  }
+  .faq-section .faq-container{
+    display: block;
+    width: 100%;
+  }
+  .faq-container .tabs{
+    width: 100%;
+  }
+  .faq-container .tab-content > div{
+    text-align: left;
+  }
+  .ngl{
+    margin-top: 300px;
   }
 }
 
@@ -1319,4 +1386,79 @@ span:hover .card-bg{
 #content-link{
   /* padding-top: 60px; */
   /* padding-top: 60px; */
+}
+
+
+/*--------------------------------------------------------------
+# NGL
+--------------------------------------------------------------*/
+
+.ngl{
+  padding: 40px;
+}
+
+.ngl .container img{
+  visibility: hidden;
+}
+
+.ngl .container a{
+  visibility: hidden;
+}
+
+.ngl .container input,
+.ngl .container select{
+  background: rgba(0, 0, 0, 0.2);
+  outline: 0;
+  color: var(--color-default);
+}
+
+.ngl .container select option{
+  background: var(--color-secondary)!important;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.ngl .container input::placeholder{
+  color: var(--color-default);
+  font-style: italic;
+}
+
+.ngl .container button{
+  padding: 5px;
+}
+
+.ngl .container .btn-primary{
+  background: var(--color-primary);
+  border: none;
+}
+
+.ngl .container .ff-widget-error b{
+  width: 20px;
+  height: 20px;
+}
+
+.ngl .container .ff-widget-error{
+  box-sizing: border-box;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.ngl .container .ff-message,
+.ngl .container .ff-message a{
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: var(--color-default);
+  text-decoration: none;
+}
+
+.ngl .container .ff-description{
+  text-align: center;
+}
+
+.ngl .container .ff-description .ff-success{
+ height: 0;
+}
+
+.ngl .container .ff-description button{
+  display: none;
 }
