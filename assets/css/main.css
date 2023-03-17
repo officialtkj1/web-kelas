@@ -586,7 +586,7 @@ h3 .section-sub-title{
 
 @media (max-width: 600px) {
   .search-wrapper .search-card{
-    width: fit-content;
+    width: 80%;
   }
   .search-wrapper .search-card input{
     width: 100%;
